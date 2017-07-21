@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="projectdatabaseDataSet" targetNamespace="http://tempuri.org/projectdatabaseDataSet.xsd" xmlns:mstns="http://tempuri.org/projectdatabaseDataSet.xsd" xmlns="http://tempuri.org/projectdatabaseDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="projectdatabaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="projectdatabaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WeGo.Properties.Settings.GlobalReference.Default.projectdatabaseConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="driverTableAdapter" GeneratorDataComponentClassName="driverTableAdapter" Name="driver" UserDataComponentName="driverTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="projectdatabaseConnectionString (Settings)" DbObjectName="projectdatabase.driver" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `dri_id`, `dri_name`, `lisence_no`, `d_age`, `d_gender`, `d_status` FROM `driver`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="projectdatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="projectdatabaseDataSet" msprop:Generator_UserDSName="projectdatabaseDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="driver" msprop:Generator_TableClassName="driverDataTable" msprop:Generator_TableVarName="tabledriver" msprop:Generator_TablePropName="driver" msprop:Generator_RowDeletingName="driverRowDeleting" msprop:Generator_RowChangingName="driverRowChanging" msprop:Generator_RowEvHandlerName="driverRowChangeEventHandler" msprop:Generator_RowDeletedName="driverRowDeleted" msprop:Generator_UserTableName="driver" msprop:Generator_RowChangedName="driverRowChanged" msprop:Generator_RowEvArgName="driverRowChangeEvent" msprop:Generator_RowClassName="driverRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,62 @@
+Register button
+
+  {
+            char g=' ';
+            if (radioButton1.Enabled)
+            {
+                MessageBox.Show("RadioButton1");
+                g = 'M';
+            }
+            else if (radioButton2.Enabled)
+            {
+                MessageBox.Show("RadioButton2");
+                g = 'F';
+            }
+            i++;
+            String insquery = "insert into projectdatabase.user values(" + i + ",'" + textBox6.Text + "','" + textBox5.Text + "','" + textBox8.Text + "','" + textBox7.Text + "','" + textBox10.Text + "','" + g + "');";
+            cn.Open();
+            try
+            {
+                MySqlCommand insertCommand = new MySqlCommand(insquery, cn);
+                if (insertCommand.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Data inserted");
+                }
+                else
+                    MessageBox.Show("Not inserted");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+Login Button
+
+try
+            {
+                MySqlCommand selectCommand = new MySqlCommand("select * from projectdatabase.user where uname='" + textBox1.Text + "'and pass='" + textBox2.Text + "';", cn);
+                MySqlDataReader myreader;
+                cn.Open();
+                myreader = selectCommand.ExecuteReader();
+                int count = 0;
+                while (myreader.Read())
+                    count += 1;
+                if (count == 1)
+                {
+                    MessageBox.Show("Username & Password found in database");
+                    BookingPage bk = new BookingPage();
+                    bk.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("WRONG USERNAME/Password");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
